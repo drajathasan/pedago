@@ -72,19 +72,19 @@ if (in_array($system_conf['mode'], $testing_mode)) {
 /* Template */
 $system_conf['template']['public'] = 'default';
 // require dynamic template
-//require CORE.'config/template.gen.inc.php';
+//require CORE.'config/template.gen.go.php';
 
 /* Base uRL */
 $system_conf['base_url'] = '';
 
 /* Call base url from Router */
-if (file_exists(CORE.'router.inc.php')) {
-	//require CORE.'router.inc.php';
+if (file_exists(CORE.'router.go.php')) {
+	//require CORE.'router.go.php';
 }
 
 /* Call template */
 if ($system_conf['mode'] === 'maintenance') {
-	require CORE.'view/maintenance/index_template.inc.php';
+	require CORE.'view/maintenance/index_template.go.php';
 } else {
-   require CORE.'view/'.$system_conf['template']['public'].'/index_template.inc.php';
+   require CORE.'view/'.$system_conf['template']['public'].'/index_template.go.php';
 }
